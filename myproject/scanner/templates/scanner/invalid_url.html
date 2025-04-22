@@ -1,0 +1,67 @@
+{% extends 'scanner/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    footer {
+        background-color:hsl(0, 9.80%, 90.00%);
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    footer a {
+        color: #3478d4;
+        text-decoration: none;
+    }
+
+    footer .social-icons a {
+        margin-left: 12px;
+        color: #555;
+        font-size: 18px;
+    }
+
+    footer .social-icons a:hover {
+        color: #3478d4;
+    }
+    #but{
+        color: #3478d4;
+        font-size:20px;
+    }
+    .para{
+        opacity: 0.60;
+        font-size:20px;
+    }
+    h2{
+        opacity: 0.60;
+        font-size:40px;
+    }
+</style>
+<div style="text-align:center; padding:30px;">
+    <h2>Sorry about that...</h2>
+    <br>
+    <p class="para">{{ error }}</p>
+    {% comment %} <img src="{% static 'scanner/images/error_page.png' %}" alt="Error Image" style="max-width:600px; margin-top:20px;"> {% endcomment %}
+    <br><br>
+    <a href="{% url 'scanner:index' %}" class="btn btn-primary"id="but"><b>Go Back</b></a>
+</div>
+<footer>
+
+    <div class="footer-left">
+        A <a href="#">probely.com</a> project - 
+        <a href="#">CC-BY-SA 4.0</a>
+    </div>
+  
+    <div class="footer-center">
+        Powered by <a href="#">Probely</a> - A Snyk Business
+    </div>
+  
+    <div class="footer-right">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+{% endblock %}

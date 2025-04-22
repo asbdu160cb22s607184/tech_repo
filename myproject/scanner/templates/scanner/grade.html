@@ -1,0 +1,203 @@
+{% extends 'scanner/base.html'%}
+{% block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Security Report Summary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      padding: 30px;
+    }
+
+    .report-box {
+      background-color: #eaf4fd;
+      border: 1px solid #9cbfdc;
+      border-radius: 4px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .report-box h3 {
+      margin-top: 0;
+      font-size: 22px;
+      border-bottom: 1px solid #9cbfdc;
+      padding-bottom: 10px;
+      color: #444;
+    }
+
+    .grade {
+      float: left;
+      background-color:rgb(23, 177, 67);
+      color: white;
+      font-size: 60px;
+      font-weight: bold;
+      padding: 30px 40px;
+      border-radius: 15px;
+      margin-right: 30px;
+    }
+
+    .report-details {
+      overflow: hidden;
+    }
+
+    .report-details table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .report-details td {
+      padding: 8px 0;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    .report-details td:first-child {
+      font-weight: bold;
+      width: 100px;
+    }
+    .grade {
+      float: left;
+      color: white;
+      font-size: 60px;
+      font-weight: bold;
+      padding: 30px 40px;
+      border-radius: 15px;
+      margin-right: 30px;
+    }
+    .grade-green {
+      background-color:rgb(23, 177, 67);
+    }
+    .grade-orangelight {
+      background-color:hsl(53, 83.00%, 53.90%);
+    }
+    .grade-orange {
+      background-color: #ff9900;
+      {% comment %} background-color:#ff9900; {% endcomment %}
+      {% comment %} background-color:rgb(231, 10, 165); {% endcomment %}
+    }
+    
+    .grade-red {
+      background-color: #e74c3c;
+    }+
+    
+    .badge  {
+      display: inline-block;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      margin: 2px 5px 2px 0;
+    }
+    .badge-success{
+      background-color:rgb(26, 126, 26);
+      margin-top:10px;
+      display: inline-block;
+      padding: 8px 16px;
+      color: white;
+      border-radius: 50px; /* this makes it pill-shaped */
+      font-size: 14px;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    .badge-danger {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color:hsl(9, 96.70%, 52.40%);
+      color: white;
+      border-radius: 50px; /* this makes it pill-shaped */
+      font-size: 14px;
+      font-family: sans-serif;
+      text-align: center;
+      
+      
+    }
+
+
+    .advanced {
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid #c4dff3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .advanced button {
+      background-color: #3b7ddd;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .advanced button:hover {
+      background-color: #2a64b7;
+    }
+
+  </style>
+</head>
+
+    <div class="report-box">
+    <h3>Security Report Summary</h3>
+
+    {% comment %} <div class="grade">{{grade}}</div> {% endcomment %}
+    <div class="grade 
+      {% if grade in 'A+A' %}grade-green
+      {% elif grade in 'BC' %}grade-orangelight
+      {% elif grade in 'DE' %}grade-orange
+      {% else %}grade-red
+      {% endif %}">{{grade}}</div>
+
+
+    <div class="report-details">
+      <table>
+        <tr>
+          <td>Site:</td>
+          <td><a href="#">{{url}}</a></td>
+        </tr> 
+      
+        <tr>
+          <td>IP Address:</td>
+          <td>{{ip_address}}</td>
+        </tr>
+        <tr>
+          <td>Report Time:</td>
+          <td>{{report_time }}</td>
+        </tr>
+        <tr>
+          <td>Headers:</td>
+          <td>
+           
+              {% for header in header_statuses %}
+                  {% if header.present %}
+                      <span class=" badge badge-success">{{ header.name }}</span>
+                  {% else %}
+                      <span class="badge badge-danger">{{ header.name }}</span>
+                  {% endif %}
+              {% endfor %}
+          </td>
+        </tr>
+      </table> 
+
+      <div class="advanced">
+        <div>
+          <strong>Advanced:</strong> Wow, amazing grade! Perform a deeper security analysis of your website and APIs:
+        </div>
+        <button>Try Now</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+{% endblock %}
