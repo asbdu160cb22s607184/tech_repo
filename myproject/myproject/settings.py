@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-lq%2zp-q4=9-$er44c&7c06&=-+#(yn!+9+7ja%w*muz*+hqr#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://tech-repo-6.onrender.com","tech-repo-6.onrender.com"]
 
 
 # Application definition
@@ -55,7 +55,7 @@ MIDDLEWARE = [
      
 ]
 
-ROOT_URLCONF = 'myproject.urls'
+ROOT_URLCONF = 'myproject.myproject.urls'
 
 TEMPLATES = [
     {
