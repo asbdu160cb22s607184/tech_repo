@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoise.Middleware'
 ]
 
 ROOT_URLCONF = 'myproject.urls'
@@ -74,16 +77,19 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'scanner',
-        'USER': 'root',
-        'PASSWORD': 'Dhivya@28',
-        'HOST': 'localhost',
-        'PORT': '3306',  
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME':'scanner',
+#         'USER': 'root',
+#         'PASSWORD': 'Dhivya@28',
+#         'HOST': 'localhost',
+#         'PORT': '3306',  
+#     }
+# }
+DATABASES={
+     'default':dj_database_url.parse("postgresql://scanner_django_render_user:8WZc1ETKJXmaMxSM2P6iEUJKMSAzAmBU@dpg-d048ack9c44c739cf3h0-a.oregon-postgres.render.com/scanner_django_render")
+ }
 #DATABASES["default"]=dj_database_url.parse("postgresql://scanner_django_render_user:8WZc1ETKJXmaMxSM2P6iEUJKMSAzAmBU@dpg-d048ack9c44c739cf3h0-a/scanner_django_render")
 # postgresql://scanner_django_render_user:8WZc1ETKJXmaMxSM2P6iEUJKMSAzAmBU@dpg-d048ack9c44c739cf3h0-a/scanner_django_render
 
