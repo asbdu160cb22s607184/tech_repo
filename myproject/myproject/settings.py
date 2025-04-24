@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'myproject.myproject.scanner'
+    'myproject.scanner'
 ]
 
 MIDDLEWARE = [
