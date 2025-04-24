@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-lq%2zp-q4=9-$er44c&7c06&=-+#(yn!+9+7ja%w*muz*+hqr#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://tech-repo-6.onrender.com","tech-repo-6.onrender.com"]
+ALLOWED_HOSTS = ['https://tech-repo-10.onrender.com','tech-repo-10.onrender.com']
 
 
 # Application definition
