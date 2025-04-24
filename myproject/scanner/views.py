@@ -6,7 +6,7 @@ import validators
 from django.utils import timezone
 from .models import HallOfFame, HallOfShame,RecentScan, GradeSummary
 from django.db.models import Count,Sum
-from myproject.scanner.templates import scanner
+#from myproject.scanner.templates import scanner
 
 
 # Create your views here.

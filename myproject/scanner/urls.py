@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from django.shortcuts import redirect
 
-app_name='myproject.scanner'
+app_name='scanner'
 urlpatterns = [
       path('', views.index, name='index'),
       path('about/', views.about, name='name_about'),

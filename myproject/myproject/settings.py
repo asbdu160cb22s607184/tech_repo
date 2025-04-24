@@ -28,8 +28,8 @@ SECRET_KEY = 'django-insecure-lq%2zp-q4=9-$er44c&7c06&=-+#(yn!+9+7ja%w*muz*+hqr#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://tech-repo-10.onrender.com','tech-repo-10.onrender.com']
-
+# ALLOWED_HOSTS = ['https://tech-repo-10.onrender.com','tech-repo-10.onrender.com']
+ALLOWED_HOST=[]
 
 # Application definition
 
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'myproject.scanner'
+    'scanner'
 ]
 
 MIDDLEWARE = [
@@ -52,16 +52,17 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    # 'whitenoise.middleware.WhiteNoiseMiddleware'
      
 ]
 
-ROOT_URLCONF = 'myproject.myproject.urls'
+ROOT_URLCONF = 'myproject.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # 'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS':[],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,19 +80,19 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME':'scanner',
-#         'USER': 'root',
-#         'PASSWORD': 'Dhivya@28',
-#         'HOST': 'localhost',
-#         'PORT': '3306',  
-#     }
-# }
-DATABASES={
-     'default':dj_database_url.parse("postgresql://scanner_django_render_user:8WZc1ETKJXmaMxSM2P6iEUJKMSAzAmBU@dpg-d048ack9c44c739cf3h0-a.oregon-postgres.render.com/scanner_django_render")
- }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'scanner',
+        'USER': 'root',
+        'PASSWORD': 'Dhivya@28',
+        'HOST': 'localhost',
+        'PORT': '3306',  
+    }
+}
+# DATABASES={
+#      'default':dj_database_url.parse("postgresql://scanner_django_render_user:8WZc1ETKJXmaMxSM2P6iEUJKMSAzAmBU@dpg-d048ack9c44c739cf3h0-a.oregon-postgres.render.com/scanner_django_render")
+#  }
 #DATABASES["default"]=dj_database_url.parse("postgresql://scanner_django_render_user:8WZc1ETKJXmaMxSM2P6iEUJKMSAzAmBU@dpg-d048ack9c44c739cf3h0-a/scanner_django_render")
 # postgresql://scanner_django_render_user:8WZc1ETKJXmaMxSM2P6iEUJKMSAzAmBU@dpg-d048ack9c44c739cf3h0-a/scanner_django_render
 
