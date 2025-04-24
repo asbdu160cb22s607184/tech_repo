@@ -6,7 +6,7 @@ import validators
 from django.utils import timezone
 from .models import HallOfFame, HallOfShame,RecentScan, GradeSummary
 from django.db.models import Count,Sum
-
+from myproject.scanner.templates import scanner
 
 
 # Create your views here.
@@ -29,28 +29,28 @@ def index(request):
         "total_count": total_count  
     }
 
-    return render(request, "myproject.scanner.templates.scanner.index.html",context)                     
+    return render(request, "scanner/index.html",context)                     
 def about(request):
-     return render(request,'myproject.scanner.templates.scanner.about.html')
+     return render(request,'scanner/about.html')
 def fa(request):
-     return render(request,'myproject.scanner.templates.scanner.fa.html')
+     return render(request,'scanner/fa.html')
 def api(request):
-     return render(request,'myproject.scanner.templates.scanner.api.html')
+     return render(request,'scanner/api.html')
 def terms(request):
-     return render(request,'myproject.scanner.templates.scanner.terms.html')
+     return render(request,'scanner/terms.html')
 def docs(request):
-     return render(request,'myproject.scanner.templates.scanner.docs.html')
+     return render(request,'scanner/docs.html')
 
 def grade(request):
     if request.method == 'POST':
         url = request.POST.get('url')
         if not url:
-            return render(request, 'myproject.scanner.templates.scanner.index.html', {'error': 'No URL provided'})
+            return render(request, 'scanner/index.html', {'error': 'No URL provided'})
         if not url.startswith('http://') and not url.startswith('https://'):
             url = 'http://' + url
         
         if not validators.url(url):
-            return render(request, 'myproject.scanner.templates.scanner.invalid_url.html', {'error': 'Invalid URL format. Please enter a valid site URL.'})
+            return render(request, 'scanner/invalid_url.html', {'error': 'Invalid URL format. Please enter a valid site URL.'})
         try:
             headers_req = {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
@@ -98,7 +98,7 @@ def grade(request):
             try:
                 ip_address = socket.gethostbyname(domain)
             except socket.gaierror:
-                return render(request, 'myproject.scanner.templates.scanner.invalid_url.html', {'error': 'Failed to resolve domain. Please check the URL.'})
+                return render(request, 'scanner/invalid_url.html', {'error': 'Failed to resolve domain. Please check the URL.'})
             # RecentScan.objects.create(url=url.strip(), grade=grade)
           
             try:
@@ -109,7 +109,7 @@ def grade(request):
                 RecentScan.objects.create(url=url.strip(), grade=grade)
                 
             except Exception as db_error:
-                return render(request, 'myproject.scanner.templates.scanner.index.html', {'error': f'Database error: {db_error}'})
+                return render(request, 'scanner/index.html', {'error': f'Database error: {db_error}'})
             # try:
             #     GradeSummary.objects.all().delete()
             #     grade_counts = RecentScan.objects.values('grade').annotate(count=Count('grade'))
@@ -133,7 +133,7 @@ def grade(request):
         )
       
             except Exception as summary_error:
-                return render(request, 'myproject.scanner.templates.scanner.index.html', {'error': f'Summary update error: {summary_error}'})
+                return render(request, 'scanner/index.html', {'error': f'Summary update error: {summary_error}'})
 
             
             context = {
@@ -144,9 +144,9 @@ def grade(request):
                 'present_headers': present_headers,
                 'grade': grade
             }
-            return render(request, 'myproject.scanner.templates.scanner.grade.html', context)
+            return render(request, 'scanner/grade.html', context)
 
         except Exception as e:
-            return render(request, 'myproject.scanner.templates.scanner.index.html', {'error': str(e)})
+            return render(request, 'scanner/index.html', {'error': str(e)})
 
-    return render(request,"myprojec.scanner.templates.scanner.index.html")    
+    return render(request,"scanner/index.html")    
