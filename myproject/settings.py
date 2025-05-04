@@ -30,7 +30,7 @@ DEBUG =os.environ.get("DEBUG","Flase").lower()== "true"
 
 # ALLOWED_HOSTS = ['https://tech-repo-10.onrender.com','tech-repo-10.onrender.com']
 #ALLOWED_HOSTS=[]
-ALLOWED_HOSTs=os.environ.get("ALLOWED_HOST").split("")
+ALLOWED_HOSTS=os.environ.get("ALLOWED_HOSTS").split(" ")
 # Application definition
 
 INSTALLED_APPS = [
