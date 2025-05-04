@@ -15,8 +15,8 @@ from django.db.models import Count,Sum
 
 def index(request):
     recent_scans = RecentScan.objects.order_by('-id')[:9]
-    hall_of_fame = HallOfFame.objects.all()[:9]
-    hall_of_shame = HallOfShame.objects.all()[:9]
+    hall_of_fame = HallOfFame.objects.order_by("-id")[:9]# all()
+    hall_of_shame = HallOfShame.objects.order_by("-id")[:9]
     grade_summary = GradeSummary.objects.all()
     total_count = GradeSummary.objects.aggregate(total=Sum('count'))['total'] or 0
 

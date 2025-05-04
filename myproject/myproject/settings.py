@@ -90,6 +90,8 @@ DATABASES = {
         'PORT': '3306',  
     }
 }
+DATABASES["default"]=dj_database_url.parse("postgresql://scanner_db_9w8g_user:7PcV30fpKpLs92pg9vKQjmQTggEq6o8I@dpg-d0bee1hr0fns73dcoetg-a.oregon-postgres.render.com/scanner_db_9w8g")
+# postgresql://scanner_db_9w8g_user:7PcV30fpKpLs92pg9vKQjmQTggEq6o8I@dpg-d0bee1hr0fns73dcoetg-a.oregon-postgres.render.com/scanner_db_9w8g
 # DATABASES={
 #      'default':dj_database_url.parse("postgresql://scanner_django_render_user:8WZc1ETKJXmaMxSM2P6iEUJKMSAzAmBU@dpg-d048ack9c44c739cf3h0-a.oregon-postgres.render.com/scanner_django_render")
 #  }

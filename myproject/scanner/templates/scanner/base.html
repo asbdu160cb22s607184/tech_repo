@@ -331,8 +331,15 @@
       <form class="scan-form" method="post" action="{% url 'scanner:name_grade' %}">
         {% csrf_token %}
         <input type="text" name="url" placeholder="enter address here" required>
-        <button type="submit">Scan</button>
+        <button id="scan-button" type="submit">Scan</button>
       </form>
+      <script>
+        document.querySelector('.scan-form').addEventListener('submit', function () {
+          const button = document.getElementById('scan-button');
+          button.disabled = true;
+          button.innerText = "Scanning...";
+        });
+      </script>
       <div class="checkboxes">
         <label><input type="checkbox" checked> Hide results</label>
         <label><input type="checkbox" checked> Follow redirects</label>
