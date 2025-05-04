@@ -19,6 +19,6 @@ from django.urls import path, include
 from myproject.scanner import urls
 
 urlpatterns = [
-    path("",include("scanner.urls")),
+    path("",include("myproject.scanner.urls")),
     path('admin/', admin.site.urls),
 ]
