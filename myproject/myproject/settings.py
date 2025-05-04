@@ -23,14 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-lq%2zp-q4=9-$er44c&7c06&=-+#(yn!+9+7ja%w*muz*+hqr#'
-
+#SECRET_KEY = 'django-insecure-lq%2zp-q4=9-$er44c&7c06&=-+#(yn!+9+7ja%w*muz*+hqr#'
+SECRET_KEY = os.environ.get('SECERT_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =os.environ.get("DEBUG","Flase").lower()== "true"
 
 # ALLOWED_HOSTS = ['https://tech-repo-10.onrender.com','tech-repo-10.onrender.com']
-ALLOWED_HOST=[]
-
+#ALLOWED_HOSTS=[]
+ALLOWED_HOSTs=os.environ.get("ALLOWED_HOST").split("")
 # Application definition
 
 INSTALLED_APPS = [
@@ -90,7 +90,8 @@ DATABASES = {
         'PORT': '3306',  
     }
 }
-DATABASES["default"]=dj_database_url.parse("postgresql://scanner_db_9w8g_user:7PcV30fpKpLs92pg9vKQjmQTggEq6o8I@dpg-d0bee1hr0fns73dcoetg-a.oregon-postgres.render.com/scanner_db_9w8g")
+database_url= os.environ.get("DATABASE_URL")
+DATABASES["default"]=dj_database_url.parse(database_url)
 # postgresql://scanner_db_9w8g_user:7PcV30fpKpLs92pg9vKQjmQTggEq6o8I@dpg-d0bee1hr0fns73dcoetg-a.oregon-postgres.render.com/scanner_db_9w8g
 # DATABASES={
 #      'default':dj_database_url.parse("postgresql://scanner_django_render_user:8WZc1ETKJXmaMxSM2P6iEUJKMSAzAmBU@dpg-d048ack9c44c739cf3h0-a.oregon-postgres.render.com/scanner_django_render")
