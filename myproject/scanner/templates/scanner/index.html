@@ -12,7 +12,7 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f8f8f8;
-      padding: 30px;
+      padding:10px;
       {% comment %} margin: 0; {% endcomment %}
       margin: 0;
     }
@@ -33,7 +33,7 @@
       {% comment %} width: 23%; {% endcomment %}
       display: flex;
       flex-direction: column;
-      margin-bottom: 20px;
+      margin-bottom:15px;
     }
 
     .box h3 {
@@ -117,7 +117,8 @@
      
     }
     footer {
-      background-color: #eaeaea;
+      
+      background-color: #d3d0d0; 
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
@@ -125,7 +126,22 @@
       font-size: 17px;
       height:100px;
       color:black;
-  }
+  } 
+  .footer {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  text-align: center;
+  padding: 15px 0 ;
+  background-color: #d3d0d0; /* match your style */
+}
+
+.footer-line {
+  white-space: nowrap;
+}
 
   footer a {
       color: #3478d4;
@@ -133,13 +149,27 @@
   }
 
   footer .social-icons a {
+      margin-left: 12pf;
+      font-size: 18px;
+  }
+  
+  footer .social-icons a {
       margin-left: 12px;
       color: #555;
       font-size: 18px;
   }
-
-  footer .social-icons a:hover {
-      color: #3478d4;
+  #foo1{
+    padding-right:400px;
+  }
+  @media (max-width: 600px) {
+    .footer {
+    flex-direction: column;
+    gap:5px;
+    font-size: 16px;
+  }
+  #foo1{
+    padding-right:0;
+}
   }
   </style>
 </head>
@@ -220,21 +250,15 @@
 
   </div>
   <footer>
-
-    <div class="footer-left">
-        A <a href="#">probely.com</a> project - 
-        <a href="#">CC-BY-SA 4.0</a>
-    </div>
-  
-    <div class="footer-center">
-        Powered by <a href="#">Probely</a> - A Snyk Business
-    </div>
-  
-    <div class="footer-right">
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fas fa-envelope"></i></a>
-    </div>
+    <div class="footer">
+        <div class="footer-line" id="foo1">
+          A <a href="https://snyk.io">snyk.io</a> project - 
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>
+        </div>
+        <div class="footer-line"id2="foo2">
+          Powered by <a href="https://probely.com">Probely</a> - A Snyk Business
+        </div>
+      </div>
   </footer>
 
 </body>

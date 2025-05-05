@@ -10,12 +10,17 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+    html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* or your preferred background */
+}
     body {
-      
       font-family: Arial, sans-serif;
-     
     }
+    .container {
+  width: 100%;
+}
 
     hr {
       opacity: 0.50;
@@ -270,8 +275,19 @@
     .show {
       display: block;
     }
+    #closeBtn {
+  display:none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
 
-    @media (max-width: 768px) {
+
+    @media (max-width: 600px) {
       .nav-bar {
         display: none;
       }
@@ -329,14 +345,23 @@
        {% else %}top-red
        {% endif %}
        {% endif %}">
-    <div class="hamburger" onclick="document.getElementById('sideMenu').style.width = '250px'">
+    <!-- <div class="hamburger" onclick="document.getElementById('sideMenu').style.width = '250px'"> -->
+      <!-- <span></span>
       <span></span>
       <span></span>
-      <span></span>
-    </div>
+    </div> -->
+    <!-- <span class="close-btn" onclick="closeMenu()">&times;</span> -->
 
+    <div id="hamburger" class="hamburger" onclick="openMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- <div id="closeBtn" class="close-btn" onclick="closeMenu()" style="display: none;">&times;</div>
+       -->
     <div id="sideMenu" class="side-menu">
-      <span class="close-btn" onclick="document.getElementById('sideMenu').style.width = '0'">&times;</span>
+        <span class="close-btn" onclick="closeMenu()">&times;</span>
+      <!-- <span class="close-btn" onclick="document.getElementById('sideMenu').style.width = '0'">&times;</span> -->
       <a href="https://security-headers-project.onrender.com">Home</a>
       <a href="https://security-headers-project.onrender.com/about/">Who, Why & How</a>
       <a href="https://security-headers-project.onrender.com/fa/">FAQ</a>
@@ -446,5 +471,42 @@
       button.innerText = "Scanning...";
     });
   </script>
+  <!-- <script>
+    function openMenu() {
+      document.getElementById('sideMenu').style.width = '250px';
+      document.getElementById('hamburger').style.display = 'none';
+      document.getElementById('closeBtn').style.display = 'block';
+    }
+  
+    function closeMenu() {
+      document.getElementById('sideMenu').style.width = '0';
+      document.getElementById('hamburger').style.display = 'flex';
+      document.getElementById('closeBtn').style.display = 'none';
+    }
+  </script> -->
+  <!-- <script>
+    function openMenu() {
+      document.getElementById('sideMenu').style.width = '250px';
+      document.getElementById('hamburger').style.display = 'none';
+    }
+  
+    function closeMenu() {
+      document.getElementById('sideMenu').style.width = '0';
+      document.getElementById('hamburger').style.display = 'flex';
+    }
+  </script> -->
+  <script>
+    function openMenu() {
+      document.getElementById('sideMenu').style.width = '250px';
+      document.getElementById('hamburger').style.display = 'none';
+    }
+  
+    function closeMenu() {
+      document.getElementById('sideMenu').style.width = '0';
+      document.getElementById('hamburger').style.display = 'flex';
+    }
+  </script>
+  
+  
 </body>
 </html>
