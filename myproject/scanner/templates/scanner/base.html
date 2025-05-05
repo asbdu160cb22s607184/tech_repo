@@ -12,85 +12,126 @@
     }
 
     body {
+      
       font-family: Arial, sans-serif;
+     
     }
-    hr{
+
+    hr {
       opacity: 0.50;
     }
+
     .top-section {
       background-color: #3572d1;
       color: white;
       padding: 30px 20px;
     }
-    .top-green {
-      background-color:rgb(23, 177, 67);
-    }
-    .top-orangelight {
-      background-color:hsl(53, 83.00%, 53.90%);
-    }
-    .top-orange {
-      background-color: #ff9900;
-    }
-    
-    .top-red {
-      background-color:rgb(246, 63, 43);
-    }
 
-    /* Navigation */
+    .top-green { background-color: rgb(23, 177, 67); }
+    .top-orangelight { background-color: hsl(53, 83%, 53.9%); }
+    .top-orange { background-color: #ff9900; }
+    .top-red { background-color: rgb(246, 63, 43); }
+
     .nav-bar {
-      display:flex;
+      display: flex;
       justify-content: flex-end;
-      gap:30px;
-      margin-bottom: 20px;
-      margin-right:200px;
-    }
-    .nav-bar a, .nav-bar summary {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-      list-style: none;
+      gap: 30px;
+      margin-right: 200px;
     }
 
-    .nav-bar a {
+    .nav-bar a, .nav-bar summary, .dropdown-btn {
       color: white;
       text-decoration: none;
-      opacity: 0.60;  
-      font-weight: bold; 
+      font-weight: bold;
       font-size: 18px;
+      opacity: 0.60;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
     .nav-bar a:hover {
       text-decoration: underline;
     }
 
-    /* Logo and title section */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      /* background-color: rgba(0, 0, 0, 0.8); */
+      background-color: rgb(40, 39, 39);
+      overflow-x: hidden;
+      transition: 0.3s;
+      z-index: 999;
+      padding-top: 60px;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 16px 24px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .side-menu a:hover {
+      background-color: #333;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+/* 
+    .branding {
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+      padding: 20px;
+      gap: 20px;
+      flex-wrap: wrap;
+      text-align:right;
+    } */
     .branding {
       display: flex;
       align-items: center;
       margin-bottom: 20px;
       margin-left: 120px;
     }
-    .star {
-      fill:#3572d1;  /* Light blue */
-      width: 100px;
-      height: 100px;
-    }
-
-    .grade-green {
-      fill: rgb(23, 177, 67);
-    }
-    .grade-orangelight{
-     fill: hsl(53, 83.00%, 53.90%);
-    }
-    .grade-orange{
-     fill:  #ff9900;
-    }
-
-    .grade-red {
-      fill:rgb(246, 63, 43);
-    }
-.logo {
+    /* .logo {
+      width: 80px;
+      height: 80px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    } */
+    .logo {
   width: 100px;         /* Increased from 70px */
   height: 100px; 
   background-color:white;     /* Increased from 70px */
@@ -103,23 +144,45 @@
   justify-content: center;
   margin-right: 15px;
 }
-  .brand-text {
+    /* .star {
+      fill:#3572d1; 
+      width: 100px;
+      height: 100px;
+    }  */
+    .star {
+      width: 100px;
+      height: 100px;
+      fill: #3572d1;
+    }
+
+    .grade-green { fill: rgb(23, 177, 67); }
+    .grade-orangelight { fill: hsl(53, 83%, 53.9%); }
+    .grade-orange { fill: #ff9900; }
+    .grade-red { fill: rgb(246, 63, 43); }
+
+    .brand-text {
+      font-size: 60px; 
+      font-weight: bold; 
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      color: white;
     }
 
     .title {
-      font-size: 50px;
+      font-size: 60px;
       font-weight: bold;
-      line-height: 1.2;
     }
 
     .subtitle {
       font-size: 20px;
-      opacity: 0.9;
+      color:aliceblue;
     }
-
-    /* Scan section */
+    .subtitle b{
+        font-family:Versatile;
+        font-size:24px;
+        font-weight: bold; 
+    }
     .scan-section {
       text-align: center;
       margin-top: 20px;
@@ -145,11 +208,10 @@
       border: none;
       border-radius: 5px;
       font-size: 20px;
-      
     }
 
     .scan-form button {
-      padding: 15px 15px;
+      padding: 15px;
       background-color: #222;
       color: white;
       border: none;
@@ -166,166 +228,167 @@
       font-size: 15px;
     }
 
-    .checkboxes label {
-      cursor: pointer;
-    }
-
-    .checkboxes input {
-      margin-right: 6px;
-    }
-   .dropdown {
+    .dropdown {
       position: relative;
     }
-    .dropdown:hover .dropdown-content {
-      display: block; 
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background-color: #333;
+      color: white;
+      min-width: 200px;
+      border-radius: 6px;
+      padding: 10px;
+      z-index: 10;
     }
 
-  .dropdown-content {
-    display:none;
-    position: absolute;
-    top: 35px;
-    left: 0;
-    color:white;
-    background-color: #333;  
-    min-width: 200px; /* reduced from 160px */
-    border-radius: 6px;
-    padding: 10px 10px;
-    z-index: 10; 
-    {% comment %} flex-direction: column;  {% endcomment %}
-  } 
-  
-  .dropdown-content a {
-    color: #fff;
-    padding: 6px 12px; /* reduced padding */
-    font-size: 14px;   /* slightly smaller text */
-    text-decoration: none;
-    display:block;
-  }
-  
- .dropdown-content a:hover {
-    background-color: #444;
-  }
-  
-  /* Arrow caret */
-  .dropdown-content::before {
-    content: "";
-    position: absolute; 
-    top: -8px; /* adjusted for new size */
-    left: 16px;
-    border-width: 4px;
-    border-style: solid;
-    border-color: transparent transparent #333 transparent; 
-  }
-  .dropdown-btn {
-    color: #fff;
-    opacity: 0.60;
-    background: none;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  .show {
-    display: block;
-  }
-  
+    .dropdown-content a {
+      color: white;
+      padding: 6px 12px;
+      font-size: 14px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #444;
+    }
+
+    .dropdown-content::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: 16px;
+      border-width: 4px;
+      border-style: solid;
+      border-color: transparent transparent #333 transparent;
+    }
+
+    .show {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .nav-bar {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+        opacity: 0.60;
+       
+      }
+
+      .title {
+        font-size: 24px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+      }
+
+      .scan-section h1 {
+        font-size: 20px;
+      }
+
+      .scan-form input[type="text"] {
+        width: 90%;
+      }
+      .branding {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
+    .logo {
+  margin-left:10px;
+  width: 50px;         /* Increased from 70px */
+  height: 50px; 
+  background-color:white;     /* Increased from 70px */
+  color:hsl(192, 38.50%, 97.50%);
+  font-size: 120px;      /* Adjusted for larger circle */
+  font-weight: bold;
+  border-radius: 50%;   /* Use 50% for perfect circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+    }
   </style>
 </head>
 <body>
-   
-  <div class="top-section  
-  {% if grade %}
-    {% if grade in 'A+A' %}top-green
-    {% elif grade in 'BC' %}top-orangelight
-    {% elif grade in 'DE' %}top-orange
-    {% else %}top-red
-    {% endif %}
-  {% endif %}">
+    <div class="top-section  
+    {% if grade %}
+       {% if grade in 'A+A' %}top-green
+       {% elif grade in 'BC' %}top-orangelight
+       {% elif grade in 'DE' %}top-orange
+       {% else %}top-red
+       {% endif %}
+       {% endif %}">
+    <div class="hamburger" onclick="document.getElementById('sideMenu').style.width = '250px'">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-    <!-- Top Navigation -->
-      <div class="nav-bar">
-        <a href="https://security-headers-project.onrender.com">Home</a>
-      
-        <div class="dropdown">
-          <button class="dropdown-btn" id="aboutBtn">About</button>
-          <div class="dropdown-content" id="aboutMenu">
-            <a href="https://security-headers-project.onrender.com/about/">Who, Why & How</a>
-            <a href="https://security-headers-project.onrender.com/fa/">FAQ</a>
-          </div>
+    <div id="sideMenu" class="side-menu">
+      <span class="close-btn" onclick="document.getElementById('sideMenu').style.width = '0'">&times;</span>
+      <a href="https://security-headers-project.onrender.com">Home</a>
+      <a href="https://security-headers-project.onrender.com/about/">Who, Why & How</a>
+      <a href="https://security-headers-project.onrender.com/fa/">FAQ</a>
+      <a href="https://security-headers-project.onrender.com/api/">API Keys</a>
+      <a href="https://security-headers-project.onrender.com/terms/">Terms</a>
+      <a href="https://security-headers-project.onrender.com/docs/">Docs</a>
+    </div>
+
+    <div class="nav-bar">
+      <a href="https://security-headers-project.onrender.com">Home</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" id="aboutBtn">About</button>
+        <div class="dropdown-content" id="aboutMenu">
+          <a href="https://security-headers-project.onrender.com/about/">Who, Why & How</a>
+          <a href="https://security-headers-project.onrender.com/fa/">FAQ</a>
         </div>
-        <div class="dropdown">
-          <button class="dropdown-btn" id="aboutBtn1">API</button>
-          <div class="dropdown-content" id="aboutMenu1">
-            <a href="https://security-headers-project.onrender.com/api/">API Keys</a>
-            <a href="https://security-headers-project.onrender.com/terms/">Terms</a>
-            <a href="https://security-headers-project.onrender.com/docs/">Docs</a>
-          </div>
-        </div>
-        {% comment %} <a href="#">API</a> {% endcomment %}
       </div>
-      
-      <script>
-        const aboutBtn = document.getElementById("aboutBtn");
-        const aboutMenu = document.getElementById("aboutMenu");
-        const aboutBtn1 = document.getElementById("aboutBtn1");
-        const aboutMenu1 = document.getElementById("aboutMenu1");
-      
-        // Toggle dropdown on button click
-        aboutBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          aboutMenu.classList.toggle("show");
-        });
-      
-        // Close dropdown when clicking outside
-        document.addEventListener("click", (e) => {
-          if (!aboutMenu.contains(e.target) && e.target !== aboutBtn) {
-            aboutMenu.classList.remove("show");
-          }
-        });
-        // Toggle dropdown on button click
-        aboutBtn1.addEventListener("click", (e) => {
-          e.stopPropagation();
-          aboutMenu1.classList.toggle("show");
-        }); 
-      
-        // Close dropdown when clicking outside
-        document.addEventListener("click", (e) => {
-          if (!aboutMenu1.contains(e.target) && e.target !== aboutBtn1) {
-            aboutMenu1.classList.remove("show");
-          }
-        }); 
-      </script>
-    <!-- Logo + Name shifted left -->
+      <div class="dropdown">
+        <button class="dropdown-btn" id="aboutBtn1">API</button>
+        <div class="dropdown-content" id="aboutMenu1">
+          <a href="https://security-headers-project.onrender.com/api/">API Keys</a>
+          <a href="https://security-headers-project.onrender.com/terms/">Terms</a>
+          <a href="https://security-headers-project.onrender.com/docs/">Docs</a>
+        </div>
+      </div>
+    </div>
+
     <div class="branding">
-    <div class="logo">
-      <svg class="star
-        {% if grade %} 
-          {% if grade == 'A+' or grade == 'A' %}grade-green
-          {% elif grade == 'B' or grade == 'C' %}grade-orangelight
-           {% elif grade == 'E' or grade == 'D' %}grade-orange
-          {% else %}grade-red
-          {% endif %}
-        {% endif %}" 
-      viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <div class="logo">
+        <svg class="star 
+           {% if grade %} 
+                {% if grade == 'A+' or grade == 'A' %}grade-green
+                {% elif grade == 'B' or grade == 'C' %}grade-orangelight
+                {% elif grade == 'E' or grade == 'D' %}grade-orange
+                {% else %}grade-red
+                {% endif %}
+            {% endif %}" 
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="12" fill="white"/>
+          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24
+                   L14.81 8.63L12 2L9.19 8.63L2 9.24
+                   L7.46 13.97L5.82 21L12 17.27Z" />
+        </svg>
+      </div>
+      <div class="brand-text">
+        <div class="title">Security Headers</div>
+        <div class="subtitle">by <b>Snyk </b></div>
+      </div>
+    </div>
 
-<!-- White circle background -->
-<circle cx="12" cy="12" r="12" fill="white"/>
+    <hr>
 
-<!-- Star shape -->
-<path d="M12 17.27L18.18 21L16.54 13.97L22 9.24
-         L14.81 8.63L12 2L9.19 8.63L2 9.24
-         L7.46 13.97L5.82 21L12 17.27Z" />
-</svg>
- 
-  </div>
-      <!-- <div class="logo">★</div> -->
-    <div class="brand-text">
-       <div class="title">Security Headers</div>
-       <div class="subtitle">by Probely, a Snyk Business</div>
-       </div>
-    </div><hr>
-
-    <!-- Scan Section -->
     <div class="scan-section">
       <h1>Scan your site now</h1>
       <form class="scan-form" method="post" action="{% url 'scanner:name_grade' %}">
@@ -345,10 +408,43 @@
         <label><input type="checkbox" checked> Follow redirects</label>
       </div>
     </div>
-  </div><br>
-  <br>
-     <!--Dynamic content-->
-     {% block content %}
-     {% endblock %}
+  </div>
+
+  <br><br>
+   <!--Dynamic content-->
+   {% block content %}
+   {% endblock %}
+  <script>
+    const aboutBtn = document.getElementById("aboutBtn");
+    const aboutMenu = document.getElementById("aboutMenu");
+    const aboutBtn1 = document.getElementById("aboutBtn1");
+    const aboutMenu1 = document.getElementById("aboutMenu1");
+
+    aboutBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      aboutMenu.classList.toggle("show");
+    });
+    document.addEventListener("click", (e) => {
+      if (!aboutMenu.contains(e.target) && e.target !== aboutBtn) {
+        aboutMenu.classList.remove("show");
+      }
+    });
+
+    aboutBtn1.addEventListener("click", (e) => {
+      e.stopPropagation();
+      aboutMenu1.classList.toggle("show");
+    });
+    document.addEventListener("click", (e) => {
+      if (!aboutMenu1.contains(e.target) && e.target !== aboutBtn1) {
+        aboutMenu1.classList.remove("show");
+      }
+    });
+
+    document.querySelector('.scan-form').addEventListener('submit', function () {
+      const button = document.getElementById('scan-button');
+      button.disabled = true;
+      button.innerText = "Scanning...";
+    });
+  </script>
 </body>
 </html>
