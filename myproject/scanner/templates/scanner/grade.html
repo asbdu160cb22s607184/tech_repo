@@ -259,7 +259,7 @@
     margin: 10px auto;
     box-sizing: border-box;
   }
-  .grade {
+  {% comment %} .grade {
   display: block;
   text-align: center;
   border-radius: 15px;
@@ -276,8 +276,22 @@
     margin: 0 auto 20px auto;
     font-size: 50px;
     padding: 20px 30px;
+  } {% endcomment %}
+  .grade {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 204, 0); /* Set your desired background */
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    border-radius: 15px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
-
+  
   .report-details table {
     width: 100%;
     font-size: 14px;
