@@ -12,6 +12,7 @@
       font-family: Arial, sans-serif;
       background-color: #f8f8f8;
       padding: 30px;
+      width:100%;
     }
 
     .report-box {
@@ -142,6 +143,174 @@
     .advanced button:hover {
       background-color: #2a64b7;
     }
+    footer {
+      
+      background-color: #d3d0d0; 
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 17px;
+      height:100px;
+      color:black;
+  } 
+  .footer {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  text-align: center;
+  padding: 15px 0 ;
+  background-color: #d3d0d0; /* match your style */
+}
+
+.footer-line {
+  white-space: nowrap;
+}
+
+  footer a {
+      color: #3478d4;
+      text-decoration: none;
+  }
+
+  footer .social-icons a {
+      margin-left: 12pf;
+      font-size: 18px;
+  }
+  
+  footer .social-icons a {
+      margin-left: 12px;
+      color: #555;
+      font-size: 18px;
+  }
+  #foo1{
+    padding-right:400px;
+  }
+  /* @media (max-width: 600px) {
+
+    .footer {
+    flex-direction: column;
+    gap:5px;
+    font-size: 16px;
+  }
+  #foo1{
+    padding-right:0;
+  }
+
+} */
+/* @media (max-width: 600px) {
+  .report-box {
+    padding: 15px;
+    margin: 0px;
+    width: 95%;
+    max-width: 100%;
+    margin-bottom
+  }
+
+  .grade {
+    float: none;
+    display: block;
+    text-align: center;
+    margin: 0 auto 20px auto;
+    font-size: 40px;
+    padding: 20px 30px;
+  }
+
+  .report-details td {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  .advanced {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .advanced button {
+    width: 100%;
+  }
+  .footer {
+    flex-direction: column;
+    gap:5px;
+    font-size: 16px;
+  }
+  #foo1{
+    padding-right:0;
+  }
+} */
+@media (max-width: 600px) {
+  .report-box {
+    width: 95%;
+    max-width: 100%;
+    padding: 15px;
+    margin: 10px auto;
+    box-sizing: border-box;
+  }
+
+  .grade {
+    float: none;
+    display: block;
+    text-align: center;
+    margin: 0 auto 20px auto;
+    font-size: 50px;
+    padding: 20px 30px;
+  }
+
+  .report-details table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .report-details td {
+    display: block;
+    width: 100%;
+    padding: 4px 0;
+  }
+
+  .report-details td:first-child {
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .badge {
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .advanced {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .advanced button {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    text-align: center;
+    height: auto;
+    padding: 20px;
+  }
+
+  #foo1 {
+    padding-right: 0;
+  }
+}
+
 
   </style>
 </head>
@@ -197,7 +366,17 @@
     </div>
 
   </div>
-
+  <footer>
+    <div class="footer">
+        <div class="footer-line" id="foo1">
+          A <a href="https://snyk.io">snyk.io</a> project - 
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>
+        </div>
+        <div class="footer-line"id2="foo2">
+          Powered by <a href="https://probely.com">Snyk </a>  
+        </div>
+      </div>
+  </footer>
 </body>
 </html>
 {% endblock %}
