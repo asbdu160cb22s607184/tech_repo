@@ -1,13 +1,13 @@
 {% extends 'scanner/base.html'%}
 {% block content%}
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Security Report Summary</title>
-  <style> 
+  <style>
      * {
       margin: 0;
       padding: 0;
@@ -197,12 +197,6 @@
   #foo1{
     padding-right:400px;
   }
-  {% comment %} .summary-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  } {% endcomment %}
-  
   {% comment %} @media (max-width: 600px) {
 
     .footer {
@@ -264,11 +258,6 @@
     padding: 15px;
     margin: 10px auto;
     box-sizing: border-box;
-  }
-  .summary-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   .grade {
     margin-right:30px;
@@ -354,12 +343,14 @@
     padding-right: 0;
   }
 }
+
+
   </style>
-</head> 
+</head>
 <body>
     <div class="report-box">
     <h3>Security Report Summary</h3>
-    <div class="summary-header">
+
     {% comment %} <div class="grade">{{grade}}</div> {% endcomment %}
     <div class="grade 
       {% if grade in 'A+A' %}grade-green
@@ -367,6 +358,8 @@
       {% elif grade in 'DE' %}grade-orange
       {% else %}grade-red
       {% endif %}">{{grade}}</div>
+
+
     <div class="report-details">
       <table>
         <tr>
@@ -404,7 +397,7 @@
         <button>Try Now</button>
       </div>
     </div>
-  </div>
+
   </div>
   <footer>
     <div class="footer">
@@ -418,5 +411,5 @@
       </div>
   </footer>
 </body>
-</html> 
-
+</html>
+{% endblock %}
