@@ -197,6 +197,12 @@
   #foo1{
     padding-right:400px;
   }
+  {% comment %} .summary-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } {% endcomment %}
+  
   {% comment %} @media (max-width: 600px) {
 
     .footer {
@@ -258,6 +264,11 @@
     padding: 15px;
     margin: 10px auto;
     box-sizing: border-box;
+  }
+  .summary-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .grade {
     margin-right:30px;
@@ -350,7 +361,7 @@
 
     <div class="report-box">
     <h3>Security Report Summary</h3>
-
+    <div class="summary-header">
     {% comment %} <div class="grade">{{grade}}</div> {% endcomment %}
     <div class="grade 
       {% if grade in 'A+A' %}grade-green
@@ -397,7 +408,7 @@
         <button>Try Now</button>
       </div>
     </div>
-
+  </div>
   </div>
   <footer>
     <div class="footer">
