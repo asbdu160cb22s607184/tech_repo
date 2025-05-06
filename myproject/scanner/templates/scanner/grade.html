@@ -8,13 +8,21 @@
 
   <title>Security Report Summary</title>
   <style>
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+     }
     body {
       font-family: Arial, sans-serif;
       background-color: #f8f8f8;
       padding: 30px;
       width:100%;
     }
-
+    .top-section{
+      border: none;
+      box-shadow: none;
+    }
     .report-box {
       background-color: #eaf4fd;
       border: 1px solid #9cbfdc;
@@ -30,6 +38,7 @@
       border-bottom: 1px solid #9cbfdc;
       padding-bottom: 10px;
       color: #444;
+      margin-bottom:30px;
     }
 
     .grade {
@@ -85,7 +94,7 @@
     
     .grade-red {
       background-color: #e74c3c;
-    }+
+    }
     
     .badge  {
       display: inline-block;
@@ -101,7 +110,7 @@
       display: inline-block;
       padding: 8px 16px;
       color: white;
-      border-radius: 50px; /* this makes it pill-shaped */
+      border-radius: 50px;
       font-size: 14px;
       font-family: sans-serif;
       text-align: center;
@@ -112,7 +121,7 @@
       padding: 8px 16px;
       background-color:hsl(9, 96.70%, 52.40%);
       color: white;
-      border-radius: 50px; /* this makes it pill-shaped */
+      border-radius: 50px; 
       font-size: 14px;
       font-family: sans-serif;
       text-align: center;
@@ -160,10 +169,10 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  flex-wrap: wrap; 
   text-align: center;
   padding: 15px 0 ;
-  background-color: #d3d0d0; /* match your style */
+  background-color: #d3d0d0; 
 }
 
 .footer-line {
@@ -188,7 +197,7 @@
   #foo1{
     padding-right:400px;
   }
-  /* @media (max-width: 600px) {
+  {% comment %} @media (max-width: 600px) {
 
     .footer {
     flex-direction: column;
@@ -199,8 +208,8 @@
     padding-right:0;
   }
 
-} */
-/* @media (max-width: 600px) {
+} {% endcomment %}
+{% comment %}  @media (max-width: 600px) {
   .report-box {
     padding: 15px;
     margin: 0px;
@@ -241,7 +250,7 @@
   #foo1{
     padding-right:0;
   }
-} */
+} {% endcomment %} 
 @media (max-width: 600px) {
   .report-box {
     width: 95%;
@@ -250,8 +259,17 @@
     margin: 10px auto;
     box-sizing: border-box;
   }
-
   .grade {
+  display: block;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 50px;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  margin: 0 auto 20px auto; 
+}
+.grade {
     float: none;
     display: block;
     text-align: center;

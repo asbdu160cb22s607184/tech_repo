@@ -14,7 +14,7 @@
     html, body {
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0; /* or your preferred background */
+  background-color: #f0f0f0; {%comment %}/* or your preferred background */{% endcomment %}
 }
     body {
       font-family: Arial, sans-serif;
@@ -32,7 +32,7 @@
         margin-top: 20px;
         margin-bottom: 50px;
         margin-left: 20px;
-        /* margin-right: 20px;  */
+        {% comment %} /* margin-right: 20px;  */ {% endcomment %}
         padding: 0 20px;
         opacity: 0.80;
 
@@ -45,18 +45,18 @@
     }
     .code{
         width:100%;
-        /* max-width: 1000px; */
+        {% comment %} /* max-width: 1000px; */ {% endcomment %}
         margin-top: 20px;
         margin-bottom: 50px;
-        /* margin-left:px; */
+        {% comment %} /* margin-left:px; */ {% endcomment %}
         opacity: 0.80;
             background-color: #d7d5d5;
             padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            /* font-size: 14px; */
-            /* margin-left: 12px; */
+            {% comment %} /* font-size: 14px; */
+            /* margin-left: 12px; */ {% endcomment %}
             color: #555;
             font-size: 20px;
         }
@@ -170,13 +170,13 @@ h2 {
       margin-left: 120px;
     }
     .logo {
-  width: 100px;         /* Increased from 70px */
+  width: 100px;         {% comment %} /* Increased from 70px */{% endcomment %}
   height: 100px; 
-  background-color:white;     /* Increased from 70px */
+  background-color:white;     {% comment %} /* Increased from 70px */{% endcomment %}
   color:hsl(192, 38.50%, 97.50%);
-  font-size: 120px;      /* Adjusted for larger circle */
+  font-size: 120px;       {% comment %}/* Adjusted for larger circle */{% endcomment %}
   font-weight: bold;
-  border-radius: 50%;   /* Use 50% for perfect circle */
+  border-radius: 50%;  {% comment %}  /* Use 50% for perfect circle */{% endcomment %}
   display: flex;
   align-items: center;
   justify-content: center;
@@ -281,10 +281,10 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  flex-wrap: wrap; {% comment %} /* Allows wrapping on smaller screens */ {% endcomment %}
   text-align: center;
   padding: 15px 0 ;
-  background-color: #d3d0d0; /* match your style */
+  background-color: #d3d0d0;  {% comment %}/* match your style */ {% endcomment %}
 }
 
 .footer-line {
@@ -338,11 +338,11 @@ footer {
         font-size: 14px;
       }
     .container {
-        /* max-width: 1000px; */
-        /* margin-top: 20px; */
+        {% comment %} /* max-width: 1000px; */
+        /* margin-top: 20px; */ {% endcomment %}
         margin-left:auto;
         padding-right: 20px;
-        /* padding: 0 20px; */
+        {% comment %} /* padding: 0 20px; */ {% endcomment %}
         opacity: 0.80;
 
       }
@@ -351,8 +351,8 @@ footer {
         color: dimgrey;
     }
     .container p{
-        /* margin:20px; */
-        /* width:100%; */
+        {% comment %} /* margin:20px; */
+        /* width:100%; */ {% endcomment %}
         padding:0px;
         font-size:12px ;
     }
@@ -370,7 +370,7 @@ footer {
   }
   #foo1{
     padding-right:0;
-}
+{% comment %} }
 /* .code{
             opacity: 0.80;
             background-color: #d7d5d5;
@@ -379,7 +379,7 @@ footer {
             align-items: center;
             color: #555;
             font-size:14px;
-        } */
+        } */ {% endcomment %}
     .logo {
   margin-left:10px;
   width: 50px;         /* Increased from 70px */
@@ -395,11 +395,11 @@ footer {
   margin-right: 15px;
 }
 
-    /* .container h2{
+    {% comment %} /* .container h2{
         font-size:20px;
         color: dimgrey;
-    } */
-    /* .container h2 ,h1{
+    } */ {% endcomment %}
+    {% comment %} /* .container h2 ,h1{
         font-size:10px;
         color: dimgrey;
     }
@@ -415,7 +415,7 @@ footer {
         margin:20px; */
         /* width:100%; */
         /* font-size:16px ;
-    } */ 
+    } */  {% endcomment %}
 }   
    
   </style>

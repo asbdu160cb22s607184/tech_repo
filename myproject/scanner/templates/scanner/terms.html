@@ -14,7 +14,7 @@
     html, body {
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0; /* or your preferred background */
+  background-color: #f0f0f0; {% comment %} /* or your preferred background */ {% endcomment %}
 }
     body {
       font-family: Arial, sans-serif;
@@ -105,7 +105,7 @@ h2 {
       left: 0;
       height: 100%;
       width: 0;
-      /* background-color: rgba(0, 0, 0, 0.8); */
+      {% comment %} /* background-color: rgba(0, 0, 0, 0.8); */ {% endcomment %}
       background-color: rgb(40, 39, 39);
       overflow-x: hidden;
       transition: 0.3s;
@@ -141,13 +141,13 @@ h2 {
       margin-left: 120px;
     }
     .logo {
-  width: 100px;         /* Increased from 70px */
+  width: 100px;         {% comment %}/* Increased from 70px */{% endcomment %}
   height: 100px; 
-  background-color:white;     /* Increased from 70px */
+  background-color:white;    {% comment %} /* Increased from 70px */{% endcomment %}
   color:hsl(192, 38.50%, 97.50%);
-  font-size: 120px;      /* Adjusted for larger circle */
+  font-size: 120px;      {% comment %}/* Adjusted for larger circle */{% endcomment %}
   font-weight: bold;
-  border-radius: 50%;   /* Use 50% for perfect circle */
+  border-radius: 50%; {% comment %}  /* Use 50% for perfect circle */{% endcomment %}
   display: flex;
   align-items: center;
   justify-content: center;
@@ -252,10 +252,10 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  flex-wrap: wrap; {% comment %}/* Allows wrapping on smaller screens */{% endcomment %}
   text-align: center;
   padding: 15px 0 ;
-  background-color: #d3d0d0; /* match your style */
+  background-color: #d3d0d0;{% comment %} /* match your style */{% endcomment %}
 }
 
 .footer-line {
@@ -311,7 +311,7 @@ footer {
       } 
       .container p {
         font-size:14px;
-        /* padding-right: 10px; */
+        {% comment %} /* padding-right: 10px; */ {% endcomment %}
       } 
 
       .container h2 {
@@ -336,13 +336,13 @@ footer {
 }
     .logo {
   margin-left:10px;
-  width: 50px;         /* Increased from 70px */
+  width: 50px;         {%comment %}/* Increased from 70px */{% endcomment %}
   height: 50px; 
-  background-color:white;     /* Increased from 70px */
+  background-color:white;   {% comment %}  /* Increased from 70px */{% endcomment %}
   color:hsl(192, 38.50%, 97.50%);
-  font-size: 120px;      /* Adjusted for larger circle */
+  font-size: 120px;     {%comment %} /* Adjusted for larger circle */{% endcomment %}
   font-weight: bold;
-  border-radius: 50%;   /* Use 50% for perfect circle */
+  border-radius: 50%;  {% comment %} /* Use 50% for perfect circle */{% endcomment %}
   display: flex;
   align-items: center;
   justify-content: center;

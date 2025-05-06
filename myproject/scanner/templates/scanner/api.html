@@ -105,7 +105,7 @@ h2 {
       left: 0;
       height: 100%;
       width: 0;
-      /* background-color: rgba(0, 0, 0, 0.8); */
+      {% comment %} /* background-color: rgba(0, 0, 0, 0.8); */ {% endcomment %}
       background-color: rgb(40, 39, 39);
       overflow-x: hidden;
       transition: 0.3s;
@@ -252,10 +252,10 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  flex-wrap: wrap;
   text-align: center;
   padding: 15px 0 ;
-  background-color: #d3d0d0; /* match your style */
+  background-color: #d3d0d0; 
 }
 
 .footer-line {
@@ -336,13 +336,13 @@ footer {
 }
     .logo {
   margin-left:10px;
-  width: 50px;         /* Increased from 70px */
+  width: 50px;        
   height: 50px; 
-  background-color:white;     /* Increased from 70px */
+  background-color:white;    
   color:hsl(192, 38.50%, 97.50%);
-  font-size: 120px;      /* Adjusted for larger circle */
+  font-size: 120px;      
   font-weight: bold;
-  border-radius: 50%;   /* Use 50% for perfect circle */
+  border-radius: 50%; 
   display: flex;
   align-items: center;
   justify-content: center;
