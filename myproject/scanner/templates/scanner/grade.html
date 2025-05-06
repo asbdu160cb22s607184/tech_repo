@@ -197,6 +197,13 @@
   #foo1{
     padding-right:400px;
   }
+  .branding {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 20px; /* optional, or remove entirely */
+  }
+  
   {% comment %} @media (max-width: 600px) {
 
     .footer {
@@ -278,6 +285,7 @@
     padding: 20px 30px;
   } {% endcomment %}
   .grade {
+    margin-right:30px;
     width: 100px;
     height: 100px;
     background-color: rgb(255, 204, 0); /* Set your desired background */
@@ -296,7 +304,13 @@
     width: 100%;
     font-size: 14px;
   }
-
+  .branding {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 10px; /* smaller padding for mobile */
+  }
+  
   .report-details td {
     display: block;
     width: 100%;
